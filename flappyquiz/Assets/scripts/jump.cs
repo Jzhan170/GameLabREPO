@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class jump : MonoBehaviour {
     Rigidbody2D rb;
-    public Text scoreText;
-    private int score = 0;
+    
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         
@@ -25,12 +24,5 @@ public class jump : MonoBehaviour {
 
 	}
 
-    void OnTriggerEnter(Collider Other)
-    {
-        if (Other.gameObject.CompareTag("scorepoint"))
-        {
-            score = score + 1;
-
-        }
-    }
+ 
 }
