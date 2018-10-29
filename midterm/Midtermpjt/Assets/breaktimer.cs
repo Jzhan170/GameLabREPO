@@ -4,19 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class timer : MonoBehaviour {
+public class breaktimer : MonoBehaviour {
 
-	public int timeLeft = 3;
+    public int timeLeft = 2;
     public Text countdownText;
     public int sceneNum;
-    void Start () {
+    void Start()
+    {
         StartCoroutine("LoseTime");
-	}
+    }
+
+    
 	
 	
 	void Update () {
-
-        countdownText.text = ("DRAG IT: " + timeLeft);
+        countdownText.text = ("Break Time: " + timeLeft);
 
         if (timeLeft <= 0)
         {
@@ -24,7 +26,7 @@ public class timer : MonoBehaviour {
             countdownText.text = "Times Up!";
             SceneManager.LoadScene(sceneNum);
         }
-	}
+    }
 
     IEnumerator LoseTime()
     {
